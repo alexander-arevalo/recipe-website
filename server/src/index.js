@@ -15,6 +15,9 @@ app.use(
   })
 );
 
+app.get("/", (req, res) => {
+  res,json("Hey")
+  
 app.use("/auth", userRouter);
 app.use("/recipe", recipeRouter);
 
