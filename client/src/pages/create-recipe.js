@@ -43,7 +43,7 @@ const CreateRecipe = () => {
   const onSumit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:3001/recipe", recipe, {
+      await axios.post("recipe-website-api.vercel.app/recipe", recipe, {
         headers: { authorization: cookies.access_token },
       });
       enqueueSnackbar("Successfully Created the recipe", {
