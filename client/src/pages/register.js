@@ -24,7 +24,7 @@ const Register = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("recipe-website-api.vercel.app/auth/register", {
+      await axios.post("http://localhost3002/auth/register", {
         username,
         password,
       });

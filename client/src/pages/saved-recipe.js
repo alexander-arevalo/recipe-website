@@ -10,7 +10,7 @@ const SavedRecipe = () => {
     const fetchSavedRecipe = async () => {
       try {
         const response = await axios.get(
-          `recipe-website-api.vercel.app/recipe/savedRecipes/${userID}`
+          `http://localhost3002/recipe/savedRecipes/${userID}`
         );
         setSavedRecipe(response.data.savedRecipes);
         // console.log(response.data);
