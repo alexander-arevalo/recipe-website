@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSnackbar } from "notistack";
