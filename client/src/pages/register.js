@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useSnackbar } from "notistack";
@@ -25,7 +24,7 @@ const Register = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("recipe-website-api.vercel.app/auth/register", {
+      await axios.post("http://localhost3002/auth/register", {
         username,
         password,
       });
