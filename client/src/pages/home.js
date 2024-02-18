@@ -13,7 +13,9 @@ const Home = () => {
   useEffect(() => {
     const fetchRecipe = async () => {
       try {
-        const response = await axios.get("http://localhost:3001/recipe");
+        const response = await axios.get(
+          "recipe-website-api.vercel.app/recipe"
+        );
         setRecipe(response.data);
       } catch (error) {
         console.log(error);
@@ -23,7 +25,7 @@ const Home = () => {
     const fetchSavedRecipe = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/recipe/savedRecipes/ids/${userID}`
+          `recipe-website-api.vercel.app/recipe/savedRecipes/ids/${userID}`
         );
         setSavedRecipe(response.data.savedRecipes);
         // console.log(response.data);
@@ -39,7 +41,7 @@ const Home = () => {
   const saveRecipe = async (recipeID) => {
     try {
       const response = await axios.put(
-        "http://localhost:3001/recipe",
+        "recipe-website-api.vercel.app/recipe",
         {
           recipeID,
           userID,
