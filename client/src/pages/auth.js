@@ -24,10 +24,13 @@ const Login = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost3002/auth/login", {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        "https://recipe-website-nu83hag2a-zeros-projects-0a3b826b.vercel.app/auth/login",
+        {
+          username,
+          password,
+        }
+      );
 
       setCookies("access_token", response.data.token);
       window.localStorage.setItem("userID", response.data.userID);
