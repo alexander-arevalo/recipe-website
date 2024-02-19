@@ -14,7 +14,7 @@ const Home = () => {
     const fetchRecipe = async () => {
       try {
         const response = await axios.get(
-          "https://recipe-website-nu83hag2a-zeros-projects-0a3b826b.vercel.app/recipe"
+          "https://recipe-website-grt4.vercel.app/recipe"
         );
         setRecipe(response.data);
       } catch (error) {
@@ -25,7 +25,7 @@ const Home = () => {
     const fetchSavedRecipe = async () => {
       try {
         const response = await axios.get(
-          `https://recipe-website-nu83hag2a-zeros-projects-0a3b826b.vercel.app/recipe/savedRecipes/ids/${userID}`
+          `https://recipe-website-grt4.vercel.app/recipe/savedRecipes/ids/${userID}`
         );
         setSavedRecipe(response.data.savedRecipes);
         // console.log(response.data);
@@ -41,7 +41,7 @@ const Home = () => {
   const saveRecipe = async (recipeID) => {
     try {
       const response = await axios.put(
-        "https://recipe-website-nu83hag2a-zeros-projects-0a3b826b.vercel.app/recipe",
+        "https://recipe-website-grt4.vercel.app/recipe",
         {
           recipeID,
           userID,
