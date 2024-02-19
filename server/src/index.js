@@ -1,19 +1,16 @@
 import express from "express";
 import cors from "cors";
-import mongoose from "mongoose";
 import { userRouter } from "./routes/users.js";
 import { recipeRouter } from "./routes/recipes.js";
-
+import { conn } from "./config/db.js";
+const PORT = 3001 || 3002;
 const app = express();
 
+conn();
 app.use(express.json());
 app.use(cors());
 
 app.use("/auth", userRouter);
 app.use("/recipe", recipeRouter);
 
-mongoose.connect(
-  "mongodb+srv://zerocoding:Z3r0cod1inG@recipes.svvw5bf.mongodb.net/database?retryWrites=true&w=majority"
-);
-
-app.listen(3001, () => console.log("Server is running"));
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));
