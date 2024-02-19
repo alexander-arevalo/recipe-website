@@ -24,10 +24,13 @@ const Register = () => {
   const onSubmit = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost3002/auth/register", {
-        username,
-        password,
-      });
+      await axios.post(
+        "https://recipe-website-nu83hag2a-zeros-projects-0a3b826b.vercel.app/auth/register",
+        {
+          username,
+          password,
+        }
+      );
       enqueueSnackbar("Account Created Succesfully", { variant: "success" });
       // alert("Registration Completed!");
       navigate("/auth");
