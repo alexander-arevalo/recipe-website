@@ -10,15 +10,14 @@ const app = express();
 conn();
 app.use(express.json());
 
-// CORS configuration
-const corsOptions = {
-  origin: "https://recipe-website-blush.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  allowedHeaders: ["Content-Type"],
-};
-app.use(cors(corsOptions));
+// CORS middleware
+app.use(cors());
 
+// Routes
 app.use("/auth", userRouter);
 app.use("/recipe", recipeRouter);
 
-app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+// Wildcard route for CORS preflight requests
+app.options("*", cors());
+
+app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
