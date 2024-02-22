@@ -10,7 +10,7 @@ const app = express();
 conn();
 app.use(
   cors({
-    origin: "https://recipe-website-blush.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type"],
   })
