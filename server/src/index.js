@@ -8,16 +8,17 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 conn();
+app.use(
+  cors({
+    origin: "https://recipe-website-blush.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
 app.use(express.json());
-
-// CORS middleware
-app.use(cors());
 
 // Routes
 app.use("/auth", userRouter);
 app.use("/recipe", recipeRouter);
-
-// Wildcard route for CORS preflight requests
-app.options("*", cors());
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
