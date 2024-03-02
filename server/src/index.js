@@ -8,13 +8,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 conn();
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
+app.use(cors());
 app.use(express.json());
 
 // Routes
