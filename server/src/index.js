@@ -10,7 +10,7 @@ const app = express();
 conn();
 app.use(
   cors({
-    origin: "https://recipe-website-blush.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     allowedHeaders: ["Content-Type"],
   })
@@ -21,4 +21,7 @@ app.use(express.json());
 app.use("/auth", userRouter);
 app.use("/recipe", recipeRouter);
 
-app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+  console.log("API is running!");
+});
