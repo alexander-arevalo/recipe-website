@@ -25,7 +25,7 @@ const Login = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://recipe-website-nu83hag2a-zeros-projects-0a3b826b.vercel.app/auth/login",
+        "https://recipe-website-grt4.vercel.app/auth/login",
         {
           username,
           password,
